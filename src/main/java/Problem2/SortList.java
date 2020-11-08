@@ -17,12 +17,30 @@ public class SortList {
     }
 
     public static ListNode findMidAndBreak(ListNode head) {
-        // homework
+
         return null;
     }
 
     public static ListNode mergeLists(ListNode list1, ListNode list2) {
-        // homework
-        return null;
-    }
+        if (list1 == null)
+            return list2;
+
+        else if (list2 == null)
+            return list1;
+
+        Node result;
+
+        // Pick either a or b, and recur
+        if (list1.data <= list2.data)
+        {
+            result = list1;
+            result.next = mergeLists(list1.next, list2);
+        }
+        else
+        {
+            result = list1;
+            result.next = mergeLists(list1, list2.next);
+        }
+
+        return result;    }
 }

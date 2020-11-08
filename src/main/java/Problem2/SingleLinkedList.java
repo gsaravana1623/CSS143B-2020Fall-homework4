@@ -69,6 +69,10 @@ public class SingleLinkedList {
 
     // reverse the linked list RECURSIVELY
     public void reverse() {
-        // homework
-    }
+        System.out.println("Given Linked list");
+        list.printList(head);
+        head = list.reverse(head);
+        System.out.println("");
+        System.out.println("Reversed linked list ");
+        list.printList(head);    }
 }
